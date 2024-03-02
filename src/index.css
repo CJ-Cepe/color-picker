@@ -5,13 +5,12 @@
     align-content: space-between;
     align-items: center;
 
-    background-color: antiquewhite;
     height: 220px;
     width: 400px;
     padding: 10px;
 }
 * {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 header, main, aside, section {
@@ -43,7 +42,7 @@ aside{
     overflow-y: scroll;
  
     justify-content: start;
-    align-items: center;
+    align-items: start;
     padding: 10px;
     gap: 10px;
 
@@ -104,10 +103,15 @@ main > div:last-child > label > input{
     width: 18px;
     height: 18px;
     border-radius: 50px;
-    background-color: aqua;
 }
 
 /* --------- Section ---------*/
-section > button:nth-child(2){
+
+section > input:nth-child(2){
+    display: none;
+}
+
+section > button:nth-child(3){
     margin-right: auto;
 }
+

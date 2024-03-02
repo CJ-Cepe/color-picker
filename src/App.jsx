@@ -7,8 +7,10 @@ import Field from './Field'
 
 function App() {
 
+  const [colorList, setColorList] = useState([])
   const [colors, setColors] = useState({})
   const currentColorRef = useRef(null)
+
 
   const handleColorPick = async () => {
     const eyeDropper =  new EyeDropper();
@@ -23,8 +25,23 @@ function App() {
   function updateColor(hex){
     currentColorRef.current.style.backgroundColor = hex;
     const extractedColors = convertHex(hex)
+    addColorToList(hex)
     setColors(extractedColors)
   }
+
+  function addColorToList(hex){
+    setColorList([hex, ...colorList])
+  }
+
+  function removeColorToList(){
+  
+  }
+
+  function clearList(){
+
+  }
+
+
 
   return (
     <>
@@ -41,10 +58,9 @@ function App() {
       </div>
     </main>
     <aside>
-      <ColorWell></ColorWell>
-      <ColorWell></ColorWell>
-      <ColorWell></ColorWell>
-      <ColorWell></ColorWell>
+        {
+          colorList.map((color, index) => <ColorWell key={index} color={color}></ColorWell>)
+        }
     </aside>
     <section>
       <button onClick={handleColorPick}>Pick Color</button>

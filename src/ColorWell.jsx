@@ -1,5 +1,5 @@
-function ColorWell(){
-    return <div className="color-well"></div>
+function ColorWell({color}){
+    return <div className="color-well" style={{backgroundColor: color}}></div>
 }
 
 export default ColorWell
