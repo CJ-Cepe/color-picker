@@ -1,5 +1,3 @@
-import './App.css'
-import './normalize.css'
 import ColorWell from './ColorWell'
 import Field from './Field'
 
