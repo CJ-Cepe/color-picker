@@ -1,5 +1,8 @@
 import './App.css'
+import './normalize.css'
+import ColorWell from './ColorWell'
 import Field from './Field'
+
 
 function App() {
 
@@ -11,14 +14,39 @@ function App() {
     <main>
       <div></div>
       <div>
-        <Field labelName = "HEX" value = "" />
-        <Field labelName = "HSL" value = "" />
-        <Field labelName = "RGB" value = "" />
-        <Field labelName = "RGBA" value = "" />
+        <Field labelName = "HEX:" value = ""></Field>
+        <Field labelName = "HSL:" value = ""></Field>
+        <Field labelName = "RGB:" value = ""></Field>
+        <Field labelName = "RGBA:" value = ""></Field>
       </div>
     </main>
     <aside>
-
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
     </aside>
     <section>
       <input type="color" />
