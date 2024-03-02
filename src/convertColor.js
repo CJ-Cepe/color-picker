@@ -1,9 +1,9 @@
 function convertHex(hex){
-    const rgb =  hexToRGB(hex)
-    const rgba =  hexAToRGBA(hex) 
     const hsl = hexToHSL(hex)
+    const rgb =  hexToRGB(hex)
+    const cmyk = hexToCmyk(hex)
 
-    return {hex, rgb, rgba, hsl}
+    return {hex, hsl, rgb, cmyk, }
 }
 
 export default convertHex
@@ -24,28 +24,9 @@ function hexToRGB(h) {
       b = "0x" + h[5] + h[6];
     }
     
-    return "rgb("+ +r + "," + +g + "," + +b + ")";
+    return "("+ +r + "," + +g + "," + +b + ")";
 }
 
-function hexAToRGBA(h) {
-    let r = 0, g = 0, b = 0, a = 1;
-  
-    if (h.length == 5) {
-      r = "0x" + h[1] + h[1];
-      g = "0x" + h[2] + h[2];
-      b = "0x" + h[3] + h[3];
-      a = "0x" + h[4] + h[4];
-  
-    } else if (h.length == 9) {
-      r = "0x" + h[1] + h[2];
-      g = "0x" + h[3] + h[4];
-      b = "0x" + h[5] + h[6];
-      a = "0x" + h[7] + h[8];
-    }
-    a = +(a / 255).toFixed(3);
-  
-    return "rgba(" + +r + "," + +g + "," + +b + "," + a + ")";
-}
 
 function hexToHSL(H) {
     // Convert hex to RGB first
@@ -89,5 +70,27 @@ function hexToHSL(H) {
     s = +(s * 100).toFixed(1);
     l = +(l * 100).toFixed(1);
   
-    return "hsl(" + h + "," + s + "%," + l + "%)";
+    return "(" + h + "," + s + "%," + l + "%)";
+}
+
+
+function hexToCmyk(hex) {
+  hex = hex.replace(/^#/, '');
+  const r = parseInt(hex.slice(0, 2), 16) / 255;
+  const g = parseInt(hex.slice(2, 4), 16) / 255;
+  const b = parseInt(hex.slice(4, 6), 16) / 255;
+
+  const k = Math.min(1 - r, 1 - g, 1 - b);
+  const c = (1 - r - k) / (1 - k);
+  const m = (1 - g - k) / (1 - k);
+  const y = (1 - b - k) / (1 - k);
+
+  const cymk = {
+    c: Math.round(c * 100),
+    m: Math.round(m * 100),
+    y: Math.round(y * 100),
+    k: Math.round(k * 100),
+  };
+
+  return `(${cymk.c}, ${cymk.m}, ${cymk.y}, ${cymk.k})`
 }

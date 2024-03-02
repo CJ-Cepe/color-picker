@@ -7,8 +7,15 @@ import Field from './Field'
 
 function App() {
 
+  const defColor = {
+    hex: '#e5e4e2',
+    hsl: '(40 , 5.45, 89.22)',
+    rgb: '(229, 228, 226)',
+    cmyk: '(0, 0, 1, 10)'
+  }
+
   const [colorList, setColorList] = useState([])
-  const [colors, setColors] = useState({})
+  const [colors, setColors] = useState(defColor)
   const currentColorRef = useRef(null)
 
 
@@ -37,11 +44,10 @@ function App() {
   
   }
 
-  function clearList(){
-
+  const handleClearList = ()=>{
+    setColorList([])
+    setColors(defColor)
   }
-
-
 
   return (
     <>
@@ -49,12 +55,12 @@ function App() {
       <h1>Color Picker</h1>
     </header>
     <main>
-      <div ref={currentColorRef}></div>
+      <div ref={currentColorRef} style={{backgroundColor: colors.hex}}></div>
       <div>
         <Field labelName = "HEX:" value = {colors.hex}></Field>
         <Field labelName = "HSL:" value = {colors.hsl}></Field>
         <Field labelName = "RGB:" value = {colors.rgb}></Field>
-        <Field labelName = "RGBA:" value = {colors.rgba}></Field>
+        <Field labelName = "CMYK:" value = {colors.cmyk}></Field>
       </div>
     </main>
     <aside>
@@ -66,7 +72,7 @@ function App() {
       <button onClick={handleColorPick}>Pick Color</button>
       <button>download</button>
       <button>delete</button>
-      <button>clear</button>
+      <button onClick={handleClearList}>clear</button>
     </section>
     </>
   )
