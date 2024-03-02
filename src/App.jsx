@@ -1,14 +1,31 @@
-import { useState } from 'react'
 import './App.css'
+import Field from './Field'
 
 function App() {
 
   return (
     <>
-      <main>
-        <h1>Color Picker</h1>
-        <input type="color" />
-      </main>
+    <header>
+      <h1>Color Picker</h1>
+    </header>
+    <main>
+      <div></div>
+      <div>
+        <Field labelName = "HEX" value = "" />
+        <Field labelName = "HSL" value = "" />
+        <Field labelName = "RGB" value = "" />
+        <Field labelName = "RGBA" value = "" />
+      </div>
+    </main>
+    <aside>
+
+    </aside>
+    <section>
+      <input type="color" />
+      <button>download</button>
+      <button>delete</button>
+      <button>clear</button>
+    </section>
     </>
   )
 }
