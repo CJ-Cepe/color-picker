@@ -1,4 +1,4 @@
-function Field({labelName, value}){
+function Field({labelName, value=""}){
     return (
     <label htmlFor="">
         {labelName}
