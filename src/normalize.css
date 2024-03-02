@@ -1,0 +1,33 @@
+/* Normalize CSS */
+
+/* Reset default margins and paddings */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set consistent font size and line height */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Remove underlines from links */
+a {
+  text-decoration: none;
+}
+
+/* Set default font family */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Normalize form elements */
+input, textarea, select, button {
+  font-family: inherit;
+}
+
+/* End Normalize CSS */
