@@ -18,7 +18,6 @@ function App() {
   const [colors, setColors] = useState(defColor) //obj of colors
   const currentColorRef = useRef(null)
 
-
   const handleColorPick = async () => {
     const eyeDropper =  new EyeDropper();
     try {
@@ -44,7 +43,9 @@ function App() {
   }
 
   function addColorToList(hex){
-    setColorList([hex, ...colorList])
+    if(colorList.indexOf(hex) === -1){
+      setColorList([hex, ...colorList])
+    }
   }
 
   function resetColor(){
