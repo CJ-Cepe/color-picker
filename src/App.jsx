@@ -8,14 +8,14 @@ import Field from './Field'
 function App() {
 
   const defColor = {
-    hex: '#e5e4e2',
-    hsl: '(40 , 5.45, 89.22)',
-    rgb: '(229, 228, 226)',
-    cmyk: '(0, 0, 1, 10)'
+    hex: '---------',
+    hsl: '---------',
+    rgb: '---------',
+    cmyk: '---------'
   }
 
-  const [colorList, setColorList] = useState([])
-  const [colors, setColors] = useState(defColor)
+  const [colorList, setColorList] = useState([]) //hex list
+  const [colors, setColors] = useState(defColor) //obj of colors
   const currentColorRef = useRef(null)
 
 
@@ -29,24 +29,38 @@ function App() {
     }
   }
 
-  function updateColor(hex){
+  function updateColor(hex, addFlag = true){
     currentColorRef.current.style.backgroundColor = hex;
     const extractedColors = convertHex(hex)
-    addColorToList(hex)
+    if(addFlag){
+      addColorToList(hex)
+    }
     setColors(extractedColors)
+  }
+
+  function resetColor(){
+    currentColorRef.current.style.backgroundColor = 'white';
+    setColors(defColor)
   }
 
   function addColorToList(hex){
     setColorList([hex, ...colorList])
   }
 
+  function resetColor(){
+    currentColorRef.current.style.backgroundColor = 'white';
+    setColors(defColor)
+  }
+
   function removeColorToList(){
-  
+    const hex = colors.hex
+    setColorList(colorList.filter((color) => color !== hex))
+    resetColor()
   }
 
   const handleClearList = ()=>{
     setColorList([])
-    setColors(defColor)
+    resetColor()
   }
 
   return (
@@ -65,13 +79,13 @@ function App() {
     </main>
     <aside>
         {
-          colorList.map((color, index) => <ColorWell key={index} color={color}></ColorWell>)
+          colorList.map((color, index) => <ColorWell key={index} color={color} onClick={() => updateColor(color, false)}></ColorWell>)
         }
     </aside>
     <section>
       <button onClick={handleColorPick}>Pick Color</button>
       <button>download</button>
-      <button>delete</button>
+      <button onClick={removeColorToList}>delete</button>
       <button onClick={handleClearList}>clear</button>
     </section>
     </>
