@@ -71,8 +71,6 @@ main{
 
     border: solid var(--black1);
     border-width: 0 0 1.5px 0;
-
-    
 }
 
 main > div:first-child {
@@ -96,11 +94,11 @@ main > div:first-child {
 }
 
 main > div:first-child:hover {
-    transform: scale(1.1)
+    transform: scale(1.05)
 }
 
 main > div:first-child:active {
-    transform: scale(0.9)
+    transform: scale(1)
 }
 
 main > div:last-child{
