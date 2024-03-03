@@ -78,7 +78,7 @@ function App() {
       <a>user guide</a>
     </header>
     <main>
-      <div ref={currentColorRef} style={{backgroundColor: colors.hex}}></div>
+      <div ref={currentColorRef} style={{backgroundColor: colors.hex}}>?</div>
       <div>
         <Field labelName = "HEX:" value = {colors.hex}></Field>
         <Field labelName = "HSL:" value = {colors.hsl}></Field>
@@ -88,12 +88,7 @@ function App() {
     </main>
     <aside>
       <span>
-      <ColorWell></ColorWell>
-      <ColorWell></ColorWell>
-      <ColorWell></ColorWell>
-      <ColorWell></ColorWell>
-      <ColorWell></ColorWell>
-
+      <ColorWell>+</ColorWell>
         {
           colorList.map((color, index) => <ColorWell key={index} color={color} onClick={() => updateColor(color, false)}></ColorWell>)
         }
