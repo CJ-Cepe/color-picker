@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import convertHex from './convertColor';
 import ColorWell from './ColorWell'
 import Field from './Field'
@@ -8,6 +8,8 @@ import deleteIcon from './assets/delete.svg'
 
 
 function App() {
+
+  let defColorList = []
   const defColor = {
     hex: '---------',
     hsl: '---------',
@@ -15,9 +17,16 @@ function App() {
     cmyk: '---------'
   }
 
-  const [colorList, setColorList] = useState([]) //hex list
+  const [colorList, setColorList] = useState(defColorList) //hex list
   const [colors, setColors] = useState(defColor) //obj of colors
   const currentColorRef = useRef(null)
+
+  useEffect(() => {
+    chrome.storage.local.get('updatedColorList', (data) => {
+      defColorList = [...data.updatedColorList]
+      setColorList(defColorList)
+    })
+  }, [])
 
   const handleColorPick = async () => {
     const eyeDropper =  new EyeDropper();
@@ -27,6 +36,11 @@ function App() {
     } catch (error) {
         console.error('Error selecting color:', error);
     }
+  }
+
+  function sendMessage(updatedColorList){
+    console.log({updatedColorList})
+    chrome.runtime.sendMessage({updatedColorList})
   }
 
   function updateColor(hex, addFlag = true){
@@ -41,12 +55,10 @@ function App() {
 
   function addColorToList(hex){
     if(colorList.indexOf(hex) === -1){
-      setColorList([hex, ...colorList])
+      const updatedList = [hex, ...colorList]
+      setColorList(updatedList)
+      sendMessage(updatedList)
     }
-  }
-
-  function setCurrentActive(){
-
   }
 
   function resetColor(){
@@ -57,12 +69,15 @@ function App() {
 
   function removeColorToList(){
     const hex = colors.hex
-    setColorList(colorList.filter((color) => color !== hex))
+    const updatedList = colorList.filter((color) => color !== hex);
+    setColorList(updatedList)
+    sendMessage(updatedList)
     resetColor()
   }
 
   const handleClearList = ()=>{
     setColorList([])
+    sendMessage([])
     resetColor()
   }
 
