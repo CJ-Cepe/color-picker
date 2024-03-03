@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import convertHex from './convertColor';
+import handleDownload from './handleDownload'
 import ColorWell from './ColorWell'
 import Field from './Field'
 import titleIcon from './assets/huegotit.svg'
@@ -81,6 +82,7 @@ function App() {
     resetColor()
   }
 
+ 
   return (
     <>
     <header>
@@ -107,7 +109,7 @@ function App() {
     </aside>
     <section>
       <button onClick={handleColorPick}>Pick Color</button>
-      <button><img src={downloadIcon} alt="Download"/></button>
+      <button onClick={() => handleDownload(colorList)}><img src={downloadIcon} alt="Download"/></button>
       <button onClick={removeColorToList}><img src={deleteIcon} alt="Delete"/></button>
       <button onClick={handleClearList}>Clear</button>
     </section>
