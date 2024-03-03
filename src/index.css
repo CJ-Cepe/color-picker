@@ -1,29 +1,57 @@
 #root {
+    --white1: #F3F3F3;
+    --black1: #181818;
+    --gray1: #C6C6C6;
+
+    background-color: var(--white1);
+    height: 220px;
+    width: 420px;
+    
     display: grid;
     grid-template-columns: 1fr 0.4fr;
     grid-template-rows: 0.2fr 1fr 0.2fr;
-    align-content: space-between;
     align-items: center;
 
-    height: 220px;
-    width: 420px;
-    padding: 10px;
+    border: 1.5px solid var(--black1);
 }
+
 * {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 header, main, aside, section {
     height: 100%;
 }
 
+/* --------- HEADER ---------*/
 header{
     grid-row: 1 / 2;
     grid-column: 1 / 3;
 
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 5px;
+
+    border: solid black;
+    border-width: 0 0 1.5px 0;
 }
 
+
+header > img {
+    width: 45px;
+    height: auto;
+}
+
+header > a {
+    margin-left: auto
+}
+
+header > a::after {
+    content: "📄";
+}
+
+/* --------- MAIN ---------*/
 main{
     grid-row: 2 / 3;
     grid-column: 1 / 2;
@@ -31,45 +59,17 @@ main{
     display: flex;
     justify-content: space-around;
     padding: 10px;
+
+    border: solid var(--black1);
+    border-width: 0 0 1.5px 0;
 }
-
-aside{
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: scroll;
- 
-    justify-content: start;
-    align-content: flex-start;
-    padding: 10px;
-    gap: 10px;
-
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
-
-section{
-    grid-row: 3 / 4;
-    grid-column: 1 / 3;
-
-    display: flex;
-    gap: 5px;
-    padding: 5px;
-}
-
-/* --------- HEADER ---------*/
-
-
-/* --------- MAIN ---------*/
 
 main > div:first-child {
     max-width: 60px;
     max-height: 60px;
     align-self: center;
     border-radius: 5px;
-    background-color: aqua;
+    border: 1px solid var(--gray1);
 }
 
 main > div:first-child {
@@ -110,13 +110,63 @@ main > div:last-child > label > input{
 
 
 /* --------- Aside ---------*/
+aside{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    
+    padding: 5px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+
+    border: solid var(--black1);
+    border-width: 0 0 1.5px 1.5px;
+}
+
+aside > span {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+    justify-items: center;
+    row-gap: 15px;
+}
+
 .color-well{
     width: 18px;
     height: 18px;
     border-radius: 50px;
+    border: 1px solid var(--gray1);
 }
 
 /* --------- Section ---------*/
+section{
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.2fr 0.2fr;
+}
+
+section > button {
+    background-color: var(--mainColor);
+    border: none;
+    border-right: 1.5px solid var(--black1);
+}
+
+section > button:is(:nth-child(3), :nth-child(4)) {
+    border-right: none;
+    border-left: 1.5px solid var(--black1);
+}
+
+section > button:nth-child(2) {
+    padding: 0 20px;
+}
+
+section > button > img{
+    width: 15px;
+    height: auto;
+}
 
 section > button:nth-child(2){
     margin-right: auto;

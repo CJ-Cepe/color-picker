@@ -2,7 +2,9 @@ import { useRef, useState } from 'react';
 import convertHex from './convertColor';
 import ColorWell from './ColorWell'
 import Field from './Field'
-
+import titleIcon from './assets/huegotit.svg'
+import downloadIcon from './assets/download.svg'
+import deleteIcon from './assets/delete.svg'
 
 
 function App() {
@@ -71,7 +73,9 @@ function App() {
   return (
     <>
     <header>
-      <h1>HueGot-It! <span>Color Picker</span></h1>
+      <img src={titleIcon} alt="Hue Got It title"/>
+      <h1>Color Picker</h1>
+      <a>user guide</a>
     </header>
     <main>
       <div ref={currentColorRef} style={{backgroundColor: colors.hex}}></div>
@@ -83,15 +87,23 @@ function App() {
       </div>
     </main>
     <aside>
+      <span>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+      <ColorWell></ColorWell>
+
         {
           colorList.map((color, index) => <ColorWell key={index} color={color} onClick={() => updateColor(color, false)}></ColorWell>)
         }
+      </span>
     </aside>
     <section>
       <button onClick={handleColorPick}>Pick Color</button>
-      <button>download</button>
-      <button onClick={removeColorToList}>delete</button>
-      <button onClick={handleClearList}>clear</button>
+      <button><img src={downloadIcon} alt="Download"/></button>
+      <button onClick={removeColorToList}><img src={deleteIcon} alt="Delete"/></button>
+      <button onClick={handleClearList}>Clear</button>
     </section>
     </>
   )
