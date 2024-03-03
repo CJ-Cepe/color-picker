@@ -71,6 +71,8 @@ main{
 
     border: solid var(--black1);
     border-width: 0 0 1.5px 0;
+
+    
 }
 
 main > div:first-child {
@@ -81,8 +83,16 @@ main > div:first-child {
     border-radius: 5px;
     border: 1px solid var(--gray1);
 
+    font-size: 50px;
+    color: var(--gray1);
+    display: flex;
+    place-content: center;
+    padding-left: 5px;
+
     transform: scale(1);
     transition: transform 0.2s ease-in-out;
+
+    user-select: none;
 }
 
 main > div:first-child:hover {

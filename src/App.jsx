@@ -8,7 +8,6 @@ import deleteIcon from './assets/delete.svg'
 
 
 function App() {
-
   const defColor = {
     hex: '---------',
     hsl: '---------',
@@ -32,16 +31,12 @@ function App() {
 
   function updateColor(hex, addFlag = true){
     currentColorRef.current.style.backgroundColor = hex;
+    currentColorRef.current.style.color = hex;
     const extractedColors = convertHex(hex)
     if(addFlag){
       addColorToList(hex)
     }
     setColors(extractedColors)
-  }
-
-  function resetColor(){
-    currentColorRef.current.style.backgroundColor = 'white';
-    setColors(defColor)
   }
 
   function addColorToList(hex){
@@ -55,7 +50,8 @@ function App() {
   }
 
   function resetColor(){
-    currentColorRef.current.style.backgroundColor = 'white';
+    currentColorRef.current.style.backgroundColor = '#F3F3F3';
+    currentColorRef.current.style.color = '#C6C6C6';
     setColors(defColor)
   }
 
