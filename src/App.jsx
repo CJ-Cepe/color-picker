@@ -48,6 +48,10 @@ function App() {
     }
   }
 
+  function setCurrentActive(){
+
+  }
+
   function resetColor(){
     currentColorRef.current.style.backgroundColor = 'white';
     setColors(defColor)
@@ -67,7 +71,7 @@ function App() {
   return (
     <>
     <header>
-      <h1>Color Picker</h1>
+      <h1>HueGot-It! <span>Color Picker</span></h1>
     </header>
     <main>
       <div ref={currentColorRef} style={{backgroundColor: colors.hex}}></div>

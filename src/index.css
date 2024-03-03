@@ -1,16 +1,16 @@
 #root {
     display: grid;
-    grid-template-columns: 1fr 0.5fr;
+    grid-template-columns: 1fr 0.4fr;
     grid-template-rows: 0.2fr 1fr 0.2fr;
     align-content: space-between;
     align-items: center;
 
     height: 220px;
-    width: 400px;
+    width: 420px;
     padding: 10px;
 }
 * {
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 header, main, aside, section {
@@ -42,7 +42,7 @@ aside{
     overflow-y: scroll;
  
     justify-content: start;
-    align-items: start;
+    align-content: flex-start;
     padding: 10px;
     gap: 10px;
 
@@ -88,15 +88,26 @@ main > div:last-child > label{
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+    
+}
+
+main > div:last-child > label:where(:nth-child(1), :nth-child(2), :nth-child(3)){
+    letter-spacing: 1.5px;
 }
 
 main > div:last-child > label > input{
     background-color: transparent;
     border: none;
     margin-left: 5px;
-    width: 100px;
+    width: 130px;
+
+    font-family: "Red Hat Mono", monospace;
+    font-size: 12px;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-weight: 400;
 }
+
 
 /* --------- Aside ---------*/
 .color-well{
@@ -107,11 +118,7 @@ main > div:last-child > label > input{
 
 /* --------- Section ---------*/
 
-section > input:nth-child(2){
-    display: none;
-}
-
-section > button:nth-child(3){
+section > button:nth-child(2){
     margin-right: auto;
 }
 
