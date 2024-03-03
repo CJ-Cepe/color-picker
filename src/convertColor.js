@@ -81,6 +81,11 @@ function hexToCmyk(hex) {
   const b = parseInt(hex.slice(4, 6), 16) / 255;
 
   const k = Math.min(1 - r, 1 - g, 1 - b);
+  if (k === 1) {
+    // Special case for black
+    return '(0, 0, 0, 100)';
+  }
+
   const c = (1 - r - k) / (1 - k);
   const m = (1 - g - k) / (1 - k);
   const y = (1 - b - k) / (1 - k);
@@ -92,5 +97,5 @@ function hexToCmyk(hex) {
     k: Math.round(k * 100),
   };
 
-  return `(${cymk.c}, ${cymk.m}, ${cymk.y}, ${cymk.k})`
+  return `(${cymk.c}, ${cymk.m}, ${cymk.y}, ${cymk.k})`;
 }
