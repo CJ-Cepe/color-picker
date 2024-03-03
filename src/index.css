@@ -173,6 +173,23 @@ aside > span {
     transform: scale(1);
 }
 
+.color-well:first-child{
+    color: var(--gray1);
+    font-size: 14px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-well:first-child:hover{
+    transform: none;
+}
+
+.color-well:first-child:active{
+    transform: none;
+}
+
 /* --------- Section ---------*/
 section{
     grid-row: 3 / 4;
