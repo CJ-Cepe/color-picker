@@ -2,6 +2,7 @@
     --white1: #F3F3F3;
     --black1: #181818;
     --gray1: #C6C6C6;
+    --gray2: #E0E0E0;
     --accent1: #A760FC;
     --accent1-2: #6B20C4;
     --accent2: #A4FAB4;
@@ -11,7 +12,7 @@
     background-color: var(--white1);
     color: var(--black1);
     height: 220px;
-    width: 420px;
+    width: 400px;
     
     display: grid;
     grid-template-columns: 1fr 0.4fr;
@@ -129,6 +130,20 @@ main > div:last-child > label > input{
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 400;
+
+    cursor: pointer;
+    transition: background-color 0.1s;
+    border-radius: 5px;
+
+    text-overflow: ellipsis;
+}
+
+main > div:last-child > label > input:focus{
+    outline: none;
+}
+
+main > div:last-child > label > input:active{
+    background-color: var(--gray2);
 }
 
 
@@ -180,6 +195,8 @@ aside > span {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    user-select: none;
 }
 
 .color-well:first-child:hover{
