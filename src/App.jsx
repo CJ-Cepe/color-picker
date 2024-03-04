@@ -3,19 +3,19 @@ import convertHex from './convertColor';
 import handleDownload from './handleDownload'
 import ColorWell from './ColorWell'
 import Field from './Field'
-import titleIcon from './assets/huegotit.svg'
 import downloadIcon from './assets/download.svg'
 import deleteIcon from './assets/delete.svg'
+import clearIcon from './assets/clear.svg'
 
 
 function App() {
 
   let defColorList = []
   const defColor = {
-    hex: '---------',
-    hsl: '---------',
-    rgb: '---------',
-    cmyk: '---------'
+    hex: '--------------',
+    hsl: '--------------',
+    rgb: '--------------',
+    cmyk: '--------------'
   }
 
   const [colorList, setColorList] = useState(defColorList) //hex list
@@ -86,9 +86,9 @@ function App() {
   return (
     <>
     <header>
-      <img src={titleIcon} alt="Hue Got It title"/>
-      <h1>Color Picker</h1>
-      <a>user guide</a>
+      <img src='icon.png' alt="HueMore, a simple Color Picker title icon"/>
+      <h1>HueMore<span> Color Picker</span></h1>
+      <a href=''>User Guide</a>
     </header>
     <main>
       <div ref={currentColorRef} style={{backgroundColor: colors.hex}}>?</div>
@@ -111,7 +111,7 @@ function App() {
       <button onClick={handleColorPick}>Pick Color</button>
       <button onClick={() => handleDownload(colorList)}><img src={downloadIcon} alt="Download"/></button>
       <button onClick={removeColorToList}><img src={deleteIcon} alt="Delete"/></button>
-      <button onClick={handleClearList}>Clear</button>
+      <button onClick={handleClearList}><img src={clearIcon} alt="Clear"/></button>
     </section>
     </>
   )

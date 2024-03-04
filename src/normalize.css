@@ -22,7 +22,7 @@ a {
 
 /* Set default font family */
 body {
-  font-family: "Actor", sans-serif;
+  font-family: "Inter", "Actor", sans-serif;
 }
 
 /* Normalize form elements */

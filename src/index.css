@@ -2,12 +2,21 @@
     --white1: #F3F3F3;
     --black1: #181818;
     --gray1: #C6C6C6;
-    --gray2: #E0E0E0;
-    --accent1: #A760FC;
-    --accent1-2: #6B20C4;
-    --accent2: #A4FAB4;
-    --accent3: #F4677E;
-    --accent4: #E13F8A;
+    --gray2: #b2bec3;
+    --gray3: #636e72;
+
+    --yellow1: #FFEAA7;
+    --purple1: #A29BFE;
+    --purple2: #6c5ce7;
+    --green1: #55EFC4;
+    --green2: #00b894;
+    --orange1: #fab1a0;
+    --orange2: #e17055;
+    --red1: #ff7675;
+    --red2: #d63031;
+    --pink1: #e84393;
+    
+    --border-size: 1.7px;
 
     background-color: var(--white1);
     color: var(--black1);
@@ -19,7 +28,7 @@
     grid-template-rows: 0.2fr 1fr 0.2fr;
     align-items: center;
 
-    border: 1.5px solid var(--black1);
+    border: var(--border-size) solid var(--black1);
 }
 
 * {
@@ -43,18 +52,35 @@ header{
     padding: 5px 10px;
     gap: 5px;
 
+    background-color: var(--yellow1);
     border: solid black;
-    border-width: 0 0 1.5px 0;
+    border-width: 0 0 var(--border-size) 0;
 }
 
-
 header > img {
-    width: 45px;
+    width: 19px;
     height: auto;
 }
 
+header > h1 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+header > h1 > span {
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+}
+
 header > a {
-    margin-left: auto
+    margin-left: auto;
+    font-size: 10px;
+    color: var(--gray3);
+}
+
+header > a:hover {
+    text-decoration: underline;
 }
 
 header > a::after {
@@ -68,38 +94,34 @@ main{
 
     display: flex;
     justify-content: space-around;
+    gap: 5px;
     padding: 10px;
 
     border: solid var(--black1);
-    border-width: 0 0 1.5px 0;
+    border-width: 0 0 var(--border-size) 0;
 }
 
 main > div:first-child {
     align-self: center;
 
-    width: 80px;
+    width: 70px;
     aspect-ratio: 1 / 1;
     border-radius: 5px;
-    border: 1px solid var(--gray1);
+    border: 1px solid var(--gray2);
 
-    font-size: 50px;
+    font-size: 45px;
     color: var(--gray1);
     display: flex;
     place-content: center;
-    padding-left: 5px;
 
     transform: scale(1);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.1s ease-in-out;
 
     user-select: none;
 }
 
 main > div:first-child:hover {
-    transform: scale(1.05)
-}
-
-main > div:first-child:active {
-    transform: scale(1)
+    transform: scale(1.02)
 }
 
 main > div:last-child{
@@ -132,7 +154,7 @@ main > div:last-child > label > input{
     font-weight: 400;
 
     cursor: pointer;
-    transition: background-color 0.1s;
+    transition: color 0.15s;
     border-radius: 5px;
 
     text-overflow: ellipsis;
@@ -143,7 +165,7 @@ main > div:last-child > label > input:focus{
 }
 
 main > div:last-child > label > input:active{
-    background-color: var(--gray2);
+    color: var(--pink1);
 }
 
 
@@ -158,7 +180,7 @@ aside{
     scrollbar-width: none;  /* Firefox */
 
     border: solid var(--black1);
-    border-width: 0 0 1.5px 1.5px;
+    border-width: 0 0 var(--border-size) var(--border-size);
 }
 
 aside > span {
@@ -174,7 +196,7 @@ aside > span {
     width: 20px;
     height: 20px;
     border-radius: 50px;
-    border: 1px solid var(--gray1);
+    border: 1px solid var(--gray3);
 
     transform: scale(1);
     transition: transform 0.15s ease-in-out;
@@ -189,13 +211,15 @@ aside > span {
 }
 
 .color-well:first-child{
-    color: var(--gray1);
+    color: var(--gray2);
+    border: 1px solid var(--gray2);
     font-size: 14px;
     
     display: flex;
-    justify-content: center;
     align-items: center;
-
+    justify-content: center;
+    padding-right: 1px;
+    padding-bottom: 1px;
     user-select: none;
 }
 
@@ -214,18 +238,19 @@ section{
 
     display: grid;
     grid-template-columns: 0.5fr 0.5fr 0.2fr 0.2fr;
+    background-color: var(--gray2);
 }
 
 section > button {
     background-color: var(--mainColor);
     border: none;
-    border-right: 1.5px solid var(--black1);
+    border-right: var(--border-size) solid var(--black1);
     transition: background-color 0.15s ease-in-out;
 }
 
 section > button:is(:nth-child(3), :nth-child(4)) {
     border-right: none;
-    border-left: 1.5px solid var(--black1);
+    border-left: var(--border-size) solid var(--black1);
 }
 
 section > button > img{
@@ -234,29 +259,39 @@ section > button > img{
 }
 
 section > button:nth-child(1) {
-    color: var(--white1);
-    background-color: var(--accent1) ;
+    font-size: 16px;
+    background-color: var(--purple1);
+    letter-spacing: 2px;
 }
 
 section > button:nth-child(2){
     margin-right: auto;
     padding: 0 20px;
+    background-color: var(--green1);
 }
 
+section > button:nth-child(3) {
+    background-color: var(--orange1);
+}
+
+section > button:nth-child(4){
+    background-color: var(--red1);
+}
+
+
 section > button:nth-child(1):active {
-    background-color: var(--accent1-2) ;
+    background-color: var(--purple2) ;
 }
 
 section > button:nth-child(2):active {
-    background-color: var(--accent2) ;
+    background-color: var(--green2) ;
 }
 
 section > button:nth-child(3):active {
-    background-color: var(--accent3) ;
+    background-color: var(--orange2) ;
 }
 
 section > button:nth-child(4):active {
-    color: var(--white1);
-    background-color: var(--accent4) ;
+    background-color: var(--red2) ;
 }
 

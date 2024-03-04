@@ -1,6 +1,6 @@
 async function copyContent(e){
     try {
-        if(e.target.value !== "---------"){
+        if(e.target.value !== "--------------"){
             await navigator.clipboard.writeText(e.target.value);
         }
     } catch(err){
