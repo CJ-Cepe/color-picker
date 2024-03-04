@@ -35,12 +35,12 @@ function App() {
       const selectedColor = await eyeDropper.open();
       updateColor(selectedColor.sRGBHex)
     } catch (error) {
-        console.error('Error selecting color:', error);
+       /*  console.error('Error selecting color:', error); */
     }
   }
 
   function sendMessage(updatedColorList){
-    console.log({updatedColorList})
+    /* console.log({updatedColorList}) */
     chrome.runtime.sendMessage({updatedColorList})
   }
 
