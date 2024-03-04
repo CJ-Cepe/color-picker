@@ -1,8 +1,106 @@
-# React + Vite
+# HueGot-It! Color Picker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features 
+ - [x] Color picker button
+    - When "pick color" button is clicked
+        - create instance of `EyeDropper`, which is a property in Window (global obj)
+        - invoke the `open()` method and pass the hex value to the hex converter (convertHex)
+    - Converts hex `convertHex(hex)` to equivalent hsl, rgb, and cmyk
+        - returns an object {hex, hsl, rgb, cmyk}
+        - formula & code from [css-tricks](https://css-tricks.com/converting-color-spaces-in-javascript/)
+            - cmyk -> standard conversion used in color management 
+            - [x] to handle black, cleaned by edge copilot
+    - Update color
+        - set main div's backgroung color to hex value
+        - setState for colors (trigger rerender)
+ - [x] set default value
+    - create obj, set as initial value for color state
+ - [x] display values
+ - [x] Display color history
+    - push picked color to colorList state
+    - rerender & create color well component based on colorList content
+    - pass hex value as prop for the component
+    - set background color with hex value
+ - [x] prevent duplicated hex
+    - get index of hex
+    - if found, don't add to list
+ - [x] download history
+    - [x] save history
+       - send color list to background on every update
+       - background.js receives and save list using `chrome.storage.local.set()`
+    - [x] retrieve history
+       - inside useEffect, get color using `chrome.storage.local.get()`
+       - setColorList with retrieved list
+       - [] what if no history/list?
+    - ref -> [chrome/docs/extension](https://developer.chrome.com/docs/extensions/develop/migrate/to-service-workers)
+ - [x] download colorlist
+   - get hex, rgb, hsl, cmyk
+   - convert obj to string using `JSON.stringify()`
+   - remove /{"}/ characters
+   - replace /,/ with ', ' (with space)
+   - create tempText holder
+      - add banner
+      - iterate list and join
+   - create data URI
+   - create temp anchor element
+      - set href to uri
+      - set download to 'fileName.txt'
+      - simulate clicking of a elem
+         - append to docu, click a, remove a
+ - [x] add color div, ? placeholder
+    - add ? content
+    - set user select to none
+    - set default color to gray
+    - when color is clicked, set its color similar to its background to hide it
+    - when reset, set back its color to default gray
+ - [x] copy input value when clicked
+    - use `navigator.clipboard.writeText()`
+    - ref -> [How to Copy Text to the Clipboard with JavaScript](https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/)
+ - [x] add default color/values
+    - [x] add input placeholder
+    - [x] add main div ? placeholder
+    - [x] add aside default + placeholder
+ - [x] final style
+   - [x] fix font
+      - adjust spacing and width
+   - [x] set color theme  
+   - [x] adjust spacing
+   - [x] set border style
+   - [x] set in hover and click transition
+ - [x] click color 
+    - add onClick event
+    - call updateColor with false flag
+    - this set the clicked color as color `state`
+ - [x] delete color from history
+    - get current color(hex) from color `state`
+    - find and remove it form colorList and rerender
+    - set color state to default color
+ - [x] Clear history button
+    - set color list state to _empty array_ `[]`
+    - set color state back to default 
+ - [x?] Fix export file
+   - add figlet banner
+   - bullet colors
+ - [x] final design
+ - [x] icon
+ - [] create user guide
+   - [] add ads
+ - [x] add title to some elements
+ - [] pack extension
+ - [] highlight active
+ - [x] fix export
+   - g.updatedColorList is not iterable
+ - [] try on other browsers
+ - [] clean/remove console logs
+ - [] Improve
+   - [] responsiveness
+   - [] accessibility
+ - [] try clearing cache
+- References
+   - svg _(download & delete)_
+      - https://www.svgrepo.com/
+- add disclaimer
+   - this extension only access chrome's storage to save color history
+      - can be cleared via cache
+   - this extension does not save, change or send personal information
+   - this extension does not collect any kind of data
