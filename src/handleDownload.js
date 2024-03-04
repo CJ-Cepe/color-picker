@@ -13,7 +13,10 @@ const handleDownload = (colorList)=>{
       return tempString
     })
 
-    let toPrint = '  _    _                   _____           _              _____   _     _ \n | |  | |                 / ____|         | |            |_   _| | |   | |\n | |__| |  _   _    ___  | |  __    ___   | |_   ______    | |   | |_  | |\n |  __  | | | | |  / _ \\ | | |_ |  / _ \\  | __| |______|   | |   | __| | |\n | |  | | | |_| | |  __/ | |__| | | (_) | | |_            _| |_  | |_  |_|\n |_|  |_|  \\__,_|  \\___|  \\_____|  \\___/   \\__|          |_____|  \\__| (_)\n                                                                          \n                                                                          \n \n\n'
+    let toPrint = '  _  _                 ___         _           ___   _     _ \n | || |  _  _   ___   / __|  ___  | |_   ___  |_ _| | |_  | |\n | __ | | || | / -_) | (_ | / _ \\ |  _| |___|  | |  |  _| |_|\n |_||_|  \\_,_| \\___|  \\___| \\___/  \\__|       |___|  \\__| (_)\n'
+    
+    toPrint = toPrint + '  _____        __                   ___    _         __             \n / ___/ ___   / / ___   ____       / _ \\  (_) ____  / /__ ___   ____\n/ /__  / _ \\ / / / _ \\ / __/      / ___/ / / / __/ /  \'_// -_) / __/\n\\___/  \\___//_/  \\___//_/        /_/    /_/  \\__/ /_/\\_\\ \\__/ /_/   \n                                                                    \n'
+
     toPrint = toPrint + '\n • ' + processedList.join('\n\n • ')
 
     // Create a data URI for file
@@ -29,6 +32,5 @@ const handleDownload = (colorList)=>{
     tempAnchor.click();
     document.body.removeChild(tempAnchor);
   }
-
 
 export default handleDownload
