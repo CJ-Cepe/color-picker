@@ -16,7 +16,6 @@
     "permissions": [
         "storage"
     ],
-    
     "icons": {
         "16": "icon.png",
         "32": "icon.png",
