@@ -1,8 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "color-picker",
+    "name": "HueGot-It! color-picker",
     "version": "1.0",
-    "description": "",
+    "description": "A simple color picker that gets the job done. Ideal for anyone, it simplifies color selection with just a click.",
+    "author":{
+        "email": "carlcepe909@gmail.com"
+    },
     "action": {
         "default_popup": "index.html"
     },
@@ -16,5 +19,11 @@
     "host_permissions": [
         "https://*/*",
         "http://*/*"
-    ]
+    ],
+    "icons": {
+        "16": "icon.png",
+        "32": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    }
   }
