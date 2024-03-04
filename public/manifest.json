@@ -16,10 +16,7 @@
     "permissions": [
         "storage"
     ],
-    "host_permissions": [
-        "https://*/*",
-        "http://*/*"
-    ],
+    
     "icons": {
         "16": "icon.png",
         "32": "icon.png",
