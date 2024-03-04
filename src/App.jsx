@@ -24,8 +24,10 @@ function App() {
 
   useEffect(() => {
     chrome.storage.local.get('updatedColorList', (data) => {
-      defColorList = [...data.updatedColorList]
-      setColorList(defColorList)
+      if(data.updatedColorList){
+        defColorList = [...data.updatedColorList]
+        setColorList(defColorList)
+      }
     })
   }, [])
 
