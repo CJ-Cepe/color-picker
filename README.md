@@ -101,6 +101,5 @@
       - https://www.svgrepo.com/
 - add disclaimer
    - this extension only access chrome's storage to save color history
-      - can be cleared via cache
    - this extension does not save, change or send personal information
    - this extension does not collect any kind of data
