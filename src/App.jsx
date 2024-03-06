@@ -90,7 +90,7 @@ function App() {
     <header>
       <img src='icon.png' alt="HueMore, a simple Color Picker title icon"/>
       <h1>HueMore<span> Color Picker</span></h1>
-      <a title="Open user guide - to upload soon!">User Guide</a>
+      <a title="Open user guide" href='https://color-picker-7v4.pages.dev/' target='_blank'>User Guide</a>
     </header>
     <main>
       <div ref={currentColorRef} style={{backgroundColor: colors.hex}}>?</div>
