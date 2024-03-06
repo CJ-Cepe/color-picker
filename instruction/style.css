@@ -1,0 +1,84 @@
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    
+    --white1: #F3F3F3;
+    --black1: #181818;
+
+    --gray1: #636e72;
+
+    --pink1: #e84393;
+    --yellow1: #ffa801;
+    --purple1: #6c5ce7;
+    --green1: #00b894;
+    --blue1: #0984e3;
+    --orange1: #e17055;
+    --red1: #d63031;
+    
+    background-color: var(--white1);
+    color: var(--black1);
+}
+
+header {
+    padding: 0 20%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header > img {
+    height: 30px;
+}
+
+section {
+    padding: 0 20%;
+    margin-bottom: 2rem;
+}
+
+h2{
+    line-height: 0.5;
+}
+
+h3 {
+    line-height: 0.2;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* introduction */
+section:nth-child(1) > h2 {
+    color: var(--purple1);
+}
+
+/* background */
+section:nth-child(2) > h2 {
+    color: var(--yellow1);
+}
+
+/* Installation */
+section:nth-child(3) > h2 {
+    color: var(--green1);
+}
+
+/* How to use */
+section:nth-child(4) > h2 {
+    color: var(--orange1);
+}
+
+/* troubleshooting */
+section:nth-child(5) > h2 {
+    color: var(--red1);
+}
+
+/* support */
+section:nth-child(6) > h2 {
+    color: var(--pink1);
+}
+
+/* support */
+section:nth-child(6) > p:last-child {
+    color: var(--blue1);
+    font-style: italic;
+}
