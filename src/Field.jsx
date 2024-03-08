@@ -8,11 +8,11 @@ async function copyContent(e){
     }
 }
 
-function Field({labelName, value=""}){
+function Field({labelName, value="", id}){
     return (
-    <label htmlFor={labelName + "Id"}>
+    <label htmlFor={id + "Id"}>
         {labelName}
-        <input id={labelName + "Id"} type="text" value={value} readOnly onClick={copyContent}/>
+        <input id={id + "Id"} type="text" value={value} readOnly onClick={copyContent}/>
     </label>
     )
 }
