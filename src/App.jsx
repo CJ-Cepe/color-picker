@@ -110,10 +110,10 @@ function App() {
       </span>
     </aside>
     <section>
-      <button onClick={handleColorPick} title="Pick colors">Pick Color</button>
-      <button onClick={() => handleDownload(colorList)} title="Export colors"><img src={downloadIcon} alt="Download"/></button>
-      <button onClick={removeColorToList} title="Delete color"><img src={deleteIcon} alt="Delete"/></button>
-      <button onClick={handleClearList} title="Clear colors"><img src={clearIcon} alt="Clear"/></button>
+      <button onClick={handleColorPick} title="Pick a color">Pick Color</button>
+      <button onClick={() => handleDownload(colorList)} title="Export color list"><img src={downloadIcon} alt="Download"/></button>
+      <button onClick={removeColorToList} title="Delete a color"><img src={deleteIcon} alt="Delete"/></button>
+      <button onClick={handleClearList} title="Clear colors list"><img src={clearIcon} alt="Clear"/></button>
     </section>
     </>
   )
