@@ -48,7 +48,7 @@ function App() {
   const handleColorPick = async () => {
     toggleHide()
     try {
-      await delay(10);
+      await delay(50);
       const eyeDropper =  new EyeDropper();
       const selectedColor = await eyeDropper.open();  
       updateColor(selectedColor.sRGBHex)
