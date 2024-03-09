@@ -33,21 +33,10 @@ body {
     border: var(--border-size) solid var(--black1);
 }
 
-#root.invisible,
-.invisible {
-    /* visibility: hidden; */
-    /* transform: scale(0); */
-   /*  display: none; */
-    
-    /* position: absolute;
-    top: -9999px; */
-
+#root.invisible, .invisible {
     display: none;
 }
 
-* {
-    /* outline: 1px solid red; */
-}
 
 header, main, aside, section {
     height: 100%;

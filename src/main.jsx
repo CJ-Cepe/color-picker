@@ -15,7 +15,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 const tempDiv = document.createElement('div')
 document.body.appendChild(tempDiv)
 tempDiv.classList.add('invisible', 'snippet')
-tempDiv.setAttribute('data-title', 'dot-flashing')
 
 ReactDOM.createRoot(tempDiv).render(
   <React.StrictMode>

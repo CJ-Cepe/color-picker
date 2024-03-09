@@ -47,9 +47,9 @@ function App() {
 
   const handleColorPick = async () => {
     toggleHide()
-    const eyeDropper =  new EyeDropper();
     try {
       await delay(10);
+      const eyeDropper =  new EyeDropper();
       const selectedColor = await eyeDropper.open();  
       updateColor(selectedColor.sRGBHex)
     } catch (error) {
@@ -58,8 +58,6 @@ function App() {
       toggleHide()
     }
   }
-
-  //eye dropper escaped, right clicked, error?, clicked on screen
 
   function sendMessage(updatedColorList){
     /* console.log({updatedColorList}) */
@@ -104,7 +102,6 @@ function App() {
     resetColor()
   }
 
- 
   return (
     <>
       <header>
