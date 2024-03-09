@@ -1,4 +1,4 @@
-#root {
+body {
     --white1: #F3F3F3;
     --black1: #181818;
     --gray1: #C6C6C6;
@@ -17,7 +17,9 @@
     --pink1: #e84393;
     
     --border-size: 1.7px;
+}
 
+#root {
     background-color: var(--white1);
     color: var(--black1);
     height: 220px;
@@ -30,7 +32,6 @@
 
     border: var(--border-size) solid var(--black1);
 }
-
 
 #root.invisible,
 .invisible {
@@ -309,16 +310,23 @@ section > button:nth-child(4):active {
 /* --------------------------------*/
 /* --------- DOT Flashing ---------*/
 /* --------------------------------*/
+.stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    width: 50px;
+    height: 25px;
+}
 .dot-flashing {
     position: relative;
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dot-flashing 1s infinite linear alternate;
-    animation-delay: 0.5s;
+    background-color: var(--orange1);
+    color: var(--orange1);
+    animation: dot-flashing-orange 0.7s infinite linear alternate;
+    animation-delay: 0.3s;
   }
   .dot-flashing::before, .dot-flashing::after {
     content: "";
@@ -331,9 +339,9 @@ section > button:nth-child(4):active {
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dot-flashing 1s infinite alternate;
+    background-color: var(--purple1);
+    color: var(--purple1);
+    animation: dot-flashing-purple 0.7s infinite linear alternate;
     animation-delay: 0s;
   }
   .dot-flashing::after {
@@ -341,17 +349,35 @@ section > button:nth-child(4):active {
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dot-flashing 1s infinite alternate;
-    animation-delay: 1s;
+    background-color: var(--green1);
+    color: var(--green1);
+    animation: dot-flashing-green 0.7s infinite linear alternate;
+    animation-delay: 0.5s;
   }
   
-  @keyframes dot-flashing {
+  @keyframes dot-flashing-orange {
     0% {
-      background-color: #9880ff;
+      background-color: var(--orange1);
     }
     50%, 100% {
-      background-color: rgba(152, 128, 255, 0.2);
+      background-color: rgba(225, 112, 85, 0);
+    }
+  }
+
+  @keyframes dot-flashing-purple {
+    0% {
+      background-color: var(--purple1);
+    }
+    50%, 100% {
+      background-color: rgba(0, 184, 148, 0);
+    }
+  }
+
+  @keyframes dot-flashing-green {
+    0% {
+      background-color: var(--green1);
+    }
+    50%, 100% {
+      background-color: rgba(0, 184, 148, 0);
     }
   }
