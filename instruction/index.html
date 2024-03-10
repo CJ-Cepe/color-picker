@@ -20,24 +20,51 @@
     </header>
     <main>
         <section>
-            <h2>Introduction</h2>
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#background">Background and Purpose</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#security">Security and Privacy Measures</a></li>
+                <li><a href="#steps">How to Use</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#others">Others</a></li>
+                <li><a href="#support">Support</a></li>
+            </ol>
+        </section>
+        <section id="Introduction">
+            <h2>Introduction</h2>   
             <p>Welcome to HueMore, your go-to color picker extension for Google Chrome. With a single click, explore and capture colors from any webpage. HueMore supports HEX, RGB, HSL, and CMYK color codes, making it a versatile tool for all your color needs. Enjoy the simplicity and efficiency of color picking with HueMore!</p>
         </section>
-        <section>
-            <h2>Background</h2>
+        <section id="background">
+            <h2>Background and Purpose</h2>
             <p>Firstly, a huge thank you for downloading the HueMore extension. Your support means the world to me - sending virtual hugs your way! 🤗</p>
             <p>HueMore was born out of a personal need to pick colors on the web quickly and efficiently. It started as a practice project and has grown into a tool that I hope many will find useful. </p>
             <p>I will maintain and improve HueMore in my free time, ensuring it continues to meet your color picking needs.</p>
         </section>
-        <section>
+        <section id="installation">
             <h2>Installation</h2>
-            <ol>
-                <li>Visit the Chrome Web Store.</li>
-                <li>Search for “HueMore - Color Picker”.</li>
-                <li>Click on “Add to Chrome” to install the extension.</li>
-            </ol>
+            <h3>Installing HueMore</h3>
+                <ol>
+                    <li>Visit the Chrome Web Store.</li>
+                    <li>Search for “HueMore - Color Picker”.</li>
+                    <li>Click on “Add to Chrome” to install the extension.</li>
+                </ol>
+            <h3>Uninstalling HueMore</h3>
+                <ol>
+                    <li>Open the Extensions menu in Chrome (chrome://extensions/).</li>
+                    <li>Find the HueMore extension in the list.</li>
+                    <li>Click on the “Remove” button to uninstall the extension.</li>
+                </ol>
         </section>
-        <section>
+        <section id="security">
+            <h2>Security and Privacy Measures</h2>
+            <ul>
+                <li>HueMore does not access, collect, or modify any information on any site you visit.</li>
+                <li>HueMore operates under manifest version 3, which only grants storage permissions. This is solely used for storing the list of colors that users have collected.</li>
+            </ul>
+        </section>
+        <section id="steps">
             <h2>How to Use</h2>
             <h3>Selecting a Color</h3>
                 <ol>
@@ -45,6 +72,11 @@
                     <li>Click the 'Pick Color' button to activate the eyedropper tool.</li>
                     <li>Point to the desired pixel and click to obtain its color codes.</li>
                 </ol>
+            <h3>Canceling picking color <span>(while in color pick mode)</span></h3>
+                <ul>
+                    <li><em>Option 1: </em>Press the Escape key. This will immediately exit the color pick mode.</li>
+                    <li><em>Option 2: </em>Click on any pixel to select its color, then delete this color from your color history. This action is simply to exit from color pick mode.</li>
+                </ul>
             <h3>Copying Color Codes</h3>
                 <ol>
                     <li>Select a color using the 'Pick Color' button or by clicking on a previously selected color from the list on the right.</li>
@@ -72,17 +104,31 @@
                     <li>Click the "Clear" button (represented by a broom icon) to delete all colors from your history.</li>
                 </ol>
         </section>
-        <section>
+        <section id="troubleshooting">
             <h2>Troubleshooting</h2>
             <p>If you're experiencing issues with HueMore, please try the following steps:</p>
             <ul>
-                <li><strong>Restart the Web Page:</strong> Refresh your browser page.</li>
+                <li><strong>Reload the Web Page:</strong> Refresh your browser page.</li>
+                <li><strong>Restart the Browser:</strong> If refreshing the page doesn't work, try completely closing and reopening your browser.</li>
                 <li><strong>Check for Updates:</strong>  Make sure you have the latest version of HueMore installed. You can check for updates in the Chrome Web Store.</li>
                 <li><strong>Toggle the Extension:</strong>  Try turning the extension off and back on again. You can do this in the Extensions menu (chrome://extensions/).</li>
-                <li><strong>Contact Support:</strong> If you're still having trouble, please leave your feedback on the extension's page in the Chrome Web Store.</li>
+                <li><strong>Comment in the Feedback Section:</strong> If you're still having trouble, please comment your issue in the feedback section on the extension's page in the Chrome Web Store.</li>
             </ul>
         </section>
-        <section>
+        <section id="others">
+            <h2>Other Important Notes</h2>
+            <h3 id="history">About the Color History (List)</h3>
+                <ul>
+                    <li>The color list on the right side of the extension is sorted by the latest picked colors, arranged from left to right, top to bottom.</li>
+                    <li>If you pick a pixel and its color is already in the list, it won't be added again to avoid duplication. However, it will still be selected, and its corresponding color code will be displayed.</li>
+                </ul>
+            <h3 id="limitations">Limitations</h3>
+                <ul>
+                    <li>This extension was developed and tested using the latest version of the Chrome browser. Compatibility with older versions has not yet been verified.</li>
+                    <li>The tool utilizes the <a href="https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API" target="_blank">EyeDropper API</a>, which is currently classified as an “experimental technology”. Therefore, its behavior may change in future updates of the Chrome browser.</li>
+                </ul>
+        </section>
+        <section id="support">
             <h2>Support</h2>
             <p>While HueMore is free to use, your support can help maintain and improve the extension. Here are a few ways you can support:</p>
             <ul>
@@ -92,6 +138,7 @@
                 <li><strong>Buy me a Coffee:</strong> If you're feeling generous, consider buying me a coffee to keep my creative juices flowing! ☕</li> 
             </ul>
             <p><span>Every bit of your support is deeply appreciated. It contributes to making HueMore better for everyone. A heartfelt thank you to all!</span> 😊</p>
+            <a href="https://ko-fi.com/huemore_colorpicker" target="_blank">Buy a Coffee ☕</a>
         </section>
     </main>
 </body>
