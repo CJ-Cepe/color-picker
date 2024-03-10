@@ -90,6 +90,27 @@
  - [] highlight active
  - [x] fix export
    - g.updatedColorList is not iterable
+ - [] minimize popup when picking colors
+   - toggle .hide class
+   - [x] add gif/placeholder
+   - [x] minimize when clicked 
+      - toggle class (add)
+   - [x] maximize after picking 
+      - toggle class in finally (remove)
+   - [x] error
+      - toggle class in finally (remove)
+   - [x] escaped during color picking
+      - toggle class in finally (remove)
+   - [x] maximize at start
+      - invisible not added by default, only when clicked
+   - [] fix, when pick color button is clicked the eye dropper is opened,
+      but it still has access to full width popup before display becomes none
+      therefore blocks the elements behind it.
+      - [x] add delay before openning eye dropper
+         - [] cause a little pause and shows previous ui
+   - [x] clicked popup
+      - just pick any pixel then delete color
+      - press escape 
  - [] try on other browsers
  - [] clean/remove console logs
  - [] Improve
