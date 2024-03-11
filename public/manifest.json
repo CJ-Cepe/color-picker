@@ -2,9 +2,9 @@
     "manifest_version": 3,
     "name": "HueMore - Color Picker",
     "version": "1.0",
-    "description": "A simple color picker that gets the job done. Ideal for anyone, it simplifies color selection with just a click.",
+    "description": "A simple color picker for webpages. Pick and copy colors effortlessly. Supports HEX, RGB, HSL, CMYK.",
     "author":{
-        "email": "carlcepe909@gmail.com"
+        "email": "cj.ceps@gmail.com"
     },
     "action": {
         "default_popup": "index.html"
